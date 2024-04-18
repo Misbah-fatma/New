@@ -38,7 +38,7 @@ if (process.env.NODE_ENV === 'production') {
 const PORT = process.env.PORT || 5000;
 
 mongoose
-  .connect(MONGO_URI)
+  .connect(MONGO_URI, { debug: true })
   .then(() => {
     console.log("Database connected...");
     app.listen(PORT, () => {
